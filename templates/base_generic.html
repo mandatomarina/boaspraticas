@@ -1,3 +1,4 @@
+{% load static %}
 
 <html>
 
@@ -6,61 +7,41 @@
         <title>{% block title %}Mandato Marina Helou{% endblock %}</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <style>
-        body {
-            background-color: #FFFFFF;
-            color: rgb(149, 149, 149);
-        }
-    
-        article {
-            margin:0 auto;
-            width:60%;
-            font-size:19px;
-            font-family: Karla;
-        }
-    
-        h1, h2, strong { 
-            color: #9D2153;
-        }
-        a, a:visited {
-            color: rgb(77, 209, 186);
-        }
-    
-        a:hover {
-            color: rgb(77, 209, 186);
-        }
-
-    
-    </style>
-        {% block style %}
-        {% endblock %}
+    <link rel="stylesheet" href="{% static '/boaspraticas/css/boaspraticas.css' %}" >
     </head>
     
     <body>
     
-    <article>
-    {% block content %}
-    {% endblock %}
-    {% block pagination %}
-    {% if is_paginated %}
-        <div class="pagination">
-            <span class="page-links">
-                {% if page_obj.has_previous %}
-                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">anterior</a>
-                {% endif %}
-                <span class="page-current">
-                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
-                </span>
-                {% if page_obj.has_next %}
-                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">próxima</a>
-                {% endif %}
-            </span>
-        </div>
-    {% endif %}
-    {% endblock %}
-    </article>
-    
+    <div class="container">
+        <header>
+            <h1>Projetos de Boas Práticas</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin felis ipsum, suscipit eget finibus id, hendrerit id nisl. Nulla vel turpis venenatis, gravida enim sed, vestibulum arcu. Aliquam erat volutpat. Pellentesque tempus diam eget nisl blandit iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel sapien viverra, convallis lorem sed, tincidunt elit. Vestibulum non velit vel diam cursus scelerisque in ac tellus. Donec dictum, odio et scelerisque facilisis, nulla neque aliquet dui, at scelerisque metus massa id turpis. Aenean sed elit nisl.</p>
+        </header>
+        <article>
+        {% block content %}
+        
+        {% endblock %}
+        
+        {% block pagination %}
+            {% if is_paginated %}
+                <div class="pagination">
+                    <span class="page-links">
+                        {% if page_obj.has_previous %}
+                            <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">anterior</a>
+                        {% endif %}
+                        <span class="page-current">
+                            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                        </span>
+                        {% if page_obj.has_next %}
+                            <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">próxima</a>
+                        {% endif %}
+                    </span>
+                </div>
+            {% endif %}
+        {% endblock %}
+        </article>
+    </div>
+
     </body>
     </html>
     

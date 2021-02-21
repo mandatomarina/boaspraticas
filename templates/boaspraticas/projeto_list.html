@@ -1,36 +1,25 @@
 
 {% extends "base_generic.html" %}
 
-{% block style %}
-  <style>
-      .filter p {
-        float:left;
-      }
-      .filter {
-        display: inline-block;
-      }
-
-  </style>
-{% endblock %}
 {% block content %}
-  <h1>Projetos de Boas Práticas</h1>
   <div class="filter"><form action="" method="get">
     {{ filterset.form.as_p }}
-    <br />
-    <input type="submit" />
+    <input type="submit" value="Buscar" />
   </form>
   </div>
   {% if projeto_list %}
     {% for projeto in projeto_list %}
       <div class="projeto">
-          <p>{{projeto.natureza}} {{projeto.numero_legislativo}}/{{projeto.ano_legislativo}}</p>
-          <p><a href="{{ projeto.arquivo_url }}" target="_blank">{{ projeto.nome }}</a> ({{projeto.autor.all|join:" ,"}})</p>
-          <p><b>{{projeto.tema.all|join:", "}}</b> - {{projeto.cidade}}/{{projeto.uf}}</p>
-          <p><b>Ementa:</b> {{projeto.ementa}}</p>
+          <p class="p_info">{{projeto.natureza}} {{projeto.numero_legislativo}}/{{projeto.ano_legislativo}}</p>
+          <p class="p_nome"><a href="{{ projeto.arquivo_url }}" target="_blank">{{ projeto.nome }}</a></p>
+          <p class="p_autor">({{projeto.autor.all|join:" ,"}})</p>
+          <p class="p_tema">{{projeto.tema.all|join:", "}} - {{projeto.cidade}}/{{projeto.uf}}</p>
+          <p class="p_ementa">Ementa: {{projeto.ementa}}</p>
           <hr />
       </div>
     {% endfor %}
   {% else %}
     <p>Não existem projetos cadastrados.</p>
   {% endif %} 
-{% endblock %}
+
+  {% endblock %}

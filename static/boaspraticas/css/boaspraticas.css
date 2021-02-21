@@ -1,0 +1,68 @@
+       
+       
+ body {
+    background-color: #FFFFFF;
+    color: rgb(149, 149, 149);
+}
+
+.container {
+    margin:0 auto;
+    width:60%;
+    font-size:19px;
+    font-family: Karla;
+}
+
+header {
+    min-height: 10em;
+    background-color: #5C1733;
+    padding: 1.5em;
+    color: #FFFFFF;
+}
+
+header h1 { 
+    color: #FCD941;
+}
+
+header p {
+    width:80%;
+}
+
+article {
+    padding-top: 2em;
+}
+
+article .p_nome, article .p_nome a {
+    margin-bottom: 0;
+    font-size:1.2em;
+    color: #9D2153;
+    font-weight: bold;
+    line-height: 1;
+}
+article .p_autor {
+    margin-top: 0;
+    color: #9D2153;
+}
+
+article .p_tema {
+    color: #94C6CD;
+}
+
+
+hr {
+    border-top:1px solid #9D2153;
+    margin:2em 0 2em 0;
+}
+
+.filter {
+    display: inline-block;
+}
+
+.filter p {
+    float:left;
+  }
+
+.filter input[type=submit] {
+    border-radius: 12%;
+    border-color: #ccc;
+    padding:0.3em 1em 0.3em 1em;
+}
