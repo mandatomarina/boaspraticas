@@ -1,5 +1,28 @@
        
        
+ @font-face{
+    font-family:"made-tommy-soft";
+    src:url("../font/MADE Tommy Soft Regular PERSONAL USE.otf") format("opentype");
+    font-weight: normal;
+}
+
+@font-face{
+    font-family:"made-tommy-soft";
+    src:url("../font/MADE Tommy Soft Bold PERSONAL USE.otf") format("opentype");
+    font-weight: bold;
+}
+
+@font-face{
+    font-family:"made-tommy-soft";
+    src:url("../font/MADE Tommy Soft Black PERSONAL USE.otf") format("opentype");
+    font-weight: 900;
+}
+
+
+* { 
+    font-family: 'made-tommy-soft';
+}
+
  body {
     background-color: #FFFFFF;
     color: rgb(149, 149, 149);
@@ -9,7 +32,6 @@
     margin:0 auto;
     width:60%;
     font-size:19px;
-    font-family: Karla;
 }
 
 .pagination .page-links {
@@ -25,10 +47,13 @@ header {
 
 header h1 { 
     color: #FCD941;
+    font-weight: 900;
+
 }
 
 header p {
-    width:80%;
+    width:65%;
+    font-size: 0.9em;
 }
 
 article {
