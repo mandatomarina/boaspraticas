@@ -2,7 +2,6 @@ import django_filters
 from django.shortcuts import render
 from django.views import generic
 from .models import Projeto, Autor, Tema
-from .forms import ProjetoForm
 from django_filters.filters import ModelChoiceFilter
 
 class ProjetoFilterset(django_filters.FilterSet):
@@ -12,7 +11,6 @@ class ProjetoFilterset(django_filters.FilterSet):
     class Meta:
         model = Projeto
         fields = ['tema', 'autor']
-        form_class = ProjetoForm
 
 class FilteredListView(generic.ListView):
     filterset_class = None
@@ -36,5 +34,5 @@ class FilteredListView(generic.ListView):
 class ProjetoListView(FilteredListView):
     model = Projeto
     filterset_class = ProjetoFilterset
-    paginate_by = 10
+    paginate_by = 5
         

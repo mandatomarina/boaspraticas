@@ -4,7 +4,7 @@
 {% block content %}
   <div class="filter"><form action="" method="get">
     {{ filterset.form.as_p }}
-    <input type="submit" value="Buscar" />
+    <p><input type="submit" value="Buscar" /></p>
   </form>
   </div>
   {% if projeto_list %}
@@ -15,6 +15,7 @@
           <p class="p_autor">({{projeto.autor.all|join:" ,"}})</p>
           <p class="p_tema">{{projeto.tema.all|join:", "}} - {{projeto.cidade}}/{{projeto.uf}}</p>
           <p class="p_ementa">Ementa: {{projeto.ementa}}</p>
+          <p class="p_link"><a href="{{ projeto.arquivo_url }}" target="_blank">Visualizar projeto</a></p>
           <hr />
       </div>
     {% endfor %}
